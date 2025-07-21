@@ -4,37 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IRIS Smart Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #101820;
+      color: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #00ffe7;
+      margin-bottom: 10px;
+    }
+    #clock {
+      font-size: 4em;
+      font-weight: bold;
+      background: #00ffe766;
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00ffe7;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>IRIS Smart Dashboard</h1>
-      <p class="subtitle">Augmented Vision Interface</p>
-    </header>
+  <h1>IRIS Live Dashboard</h1>
+  <div id="clock">00:00:00</div>
 
-    <main>
-      <div class="status-card">
-        <h2>System Status</h2>
-        <p id="status">🟢 NORMAL</p>
-        <button onclick="overrideSystem()">Override Now</button>
-      </div>
-
-      <div class="info-panel">
-        <h3>Live Sensor Feed</h3>
-        <ul>
-          <li>Temperature: <span id="temp">36.5°C</span></li>
-          <li>Heart Rate: <span id="heart">72 bpm</span></li>
-          <li>Network: <span id="network">Connected</span></li>
-        </ul>
-      </div>
-    </main>
-
-    <footer>
-      <p>© 2025 IRIS Labs</p>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+  <script>
+    function updateClock() {
+      const options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
+      const now = new Date().toLocaleTimeString('en-GB', options);
+      document.getElementById('clock').textContent = now;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
 </html>
