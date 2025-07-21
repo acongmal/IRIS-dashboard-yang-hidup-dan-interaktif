@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IRIS Smart Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>IRIS Smart Dashboard</h1>
+      <p class="subtitle">Augmented Vision Interface</p>
+    </header>
+
+    <main>
+      <div class="status-card">
+        <h2>System Status</h2>
+        <p id="status">🟢 NORMAL</p>
+        <button onclick="overrideSystem()">Override Now</button>
+      </div>
+
+      <div class="info-panel">
+        <h3>Live Sensor Feed</h3>
+        <ul>
+          <li>Temperature: <span id="temp">36.5°C</span></li>
+          <li>Heart Rate: <span id="heart">72 bpm</span></li>
+          <li>Network: <span id="network">Connected</span></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 IRIS Labs</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
